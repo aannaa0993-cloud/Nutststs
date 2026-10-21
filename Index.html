@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngarep Ngguri Store - flanela.id</title>
+    <!-- Google Fonts untuk kesan imut/playful -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-pastel: #FFF5F7;
+            --pink-pastel: #FFB7B2;
+            --green-pastel: #E2F0CB;
+            --yellow-pastel: #FFDAC1;
+            --purple-pastel: #E0C3FC;
+            --text-color: #5A4A42;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-pastel);
+            color: var(--text-color);
+            padding-bottom: 50px;
+        }
+
+        /* Navbar */
+        header {
+            background: #FFF;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo h1 {
+            font-family: 'Fredoka One', cursive;
+            color: #FF8B94;
+            font-size: 24px;
+        }
+
+        .logo span {
+            font-size: 14px;
+            color: #88D8B0;
+            display: block;
+        }
+
+        /* Hero / Poster Section */
+        .poster-section {
+            background: linear-gradient(135deg, var(--pink-pastel), var(--yellow-pastel));
+            margin: 20px 5%;
+            padding: 30px;
+            border-radius: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            box-shadow: 0 8px 20px rgba(255, 183, 178, 0.4);
+        }
+
+        .poster-text {
+            max-width: 450px;
+        }
+
+        .poster-text h2 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 32px;
+            color: #FFF;
+            text-shadow: 2px 2px #FF8B94;
+            margin-bottom: 10px;
+        }
+
+        .badge-price {
+            background: #FFF;
+            color: #FF8B94;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            display: inline-block;
+            margin: 10px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .poster-img {
+            max-width: 280px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 5px solid #FFF;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            font-family: 'Fredoka One', cursive;
+            font-size: 26px;
+            color: #FF8B94;
+            margin: 40px 0 20px 0;
+        }
+
+        /* Process Section */
+        .process-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 0 5%;
+        }
+
+        .process-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            border: 2px dashed var(--pink-pastel);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .process-card i {
+            font-size: 35px;
+            color: #FF8B94;
+            margin-bottom: 10px;
+        }
+
+        /* Gallery / Hasil Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 0 5%;
+        }
+
+        .gallery-item {
+            background: #FFF;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            padding-bottom: 15px;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .gallery-item h4 {
+            margin-top: 10px;
+            color: #5A4A42;
+        }
+
+        /* Order / Cart Section */
+        .cart-section {
+            background: #FFF;
+            margin: 40px 5% 20px 5%;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--yellow-pastel);
+            border-radius: 12px;
+            outline: none;
+            font-size: 14px;
+            background-color: #FAFAFA;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--pink-pastel);
+        }
+
+        .btn-wa {
+            background: #25D366;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+
+        .btn-wa:hover {
+            background: #1eb856;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #AAA;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Ngarep Ngguri Store</h1>
+            <span>by flanela.id ✨</span>
+        </div>
+    </header>
+
+    <!-- Poster Banner -->
+    <section class="poster-section">
+        <div class="poster-text">
+            <h2>Ganti Gantungan Kunci Lamamu! 💕</h2>
+            <p>Gantungan Kunci Handmade Flanel Custom Lucu & Unik sesuai Karakter Favoritmu!</p>
+            <div class="badge-price">Harga: Rp 5.000 - Rp 10.000</div>
+        </div>
+        <!-- Gantilah URL gambar di bawah dengan file poster kamu (IMG-20261021-WA0002.jpg) -->
+        <img src="IMG-20261021-WA0002.jpg" alt="Poster Flanela.id" class="poster-img" onerror="this.src='https://via.placeholder.com/280x350/FFB7B2/ffffff?text=Poster+Flanela.id'">
+    </section>
+
+    <!-- Proses Pengerjaan -->
+    <h3 class="section-title">✂️ Proses Pengerjaan ✂️</h3>
+    <div class="process-container">
+        <div class="process-card">
+            <i class="fa-solid fa-pen-ruler"></i>
+            <h4>1. Desain & Sketsa</h4>
+            <p>Kami menggambar pola karakter impianmu di atas kertas secara presisi.</p>
+        </div>
+        <div class="process-card">
+            <i class="fa-solid fa-scissors"></i>
+            <h4>2. Pemotongan Flanel</h4>
+            <p>Kain flanel berwarna pastel dipotong hati-hati sesuai pola karakter.</p>
+        </div>
+        <div class="process-card">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <h4>3. Jahit & Finishing</h4>
+            <p>Dijahit rapi dengan tangan, diisi dakron lembut, dan dipasangi rantai ganci.</p>
+        </div>
+    </div>
+
+    <!-- Hasil Karya / Galeri -->
+    <h3 class="section-title">✨ Hasil Karya Kami ✨</h3>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <!-- Ganti src dengan foto produkmu (contoh: IMG-20261021-WA0005.jpg) -->
+            <img src="IMG-20261021-WA0005.jpg" alt="Ganci Custom Cute" onerror="this.src='https://via.placeholder.com/200x180/FFDAC1/5A4A42?text=Ganci+Karakter'">
+            <h4>Karakter Custom Cute</h4>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG-20261021-WA0002.jpg" alt="Ganci Bear & Anime" onerror="this.src='https://via.placeholder.com/200x180/E2F0CB/5A4A42?text=Bear+%26+Anime'">
+            <h4>Bear & Chibi Anime</h4>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG-20261021-WA0005.jpg" alt="Ganci Stitch & Capybara" onerror="this.src='https://via.placeholder.com/200x180/E0C3FC/5A4A42?text=Stitch+%26+Kapibara'">
+            <h4>Stitch, Capybara & Friends</h4>
+        </div>
+    </div>
+
+    <!-- Form Keranjang / Order WA -->
+    <h3 class="section-title">🛒 Pesan Ganci Custom 🛒</h3>
+    <div class="cart-section">
+        <form id="orderForm" onsubmit="sendToWhatsApp(event)">
+            <div class="form-group">
+                <label for="nama">Nama Pemesan:</label>
+                <input type="text" id="nama" placeholder="Masukkan nama kamu..." required>
+            </div>
+            
+            <div class="form-group">
+                <label for="karakter">Request Karakter/Bentuk:</label>
+                <input type="text" id="karakter" placeholder="Contoh: Capybara / Chibi Anime / Beruang" required>
+            </div>
+
+            <div class="form-group">
+                <label for="jumlah">Jumlah Order:</label>
+                <input type="number" id="jumlah" min="1" value="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="catatan">Catatan / Detail Tambahan:</label>
+                <textarea id="catatan" rows="3" placeholder="Warna khusus, pakai gantungan rantai/tali, dll..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp (Hendra)
+            </button>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2026 Ngarep Ngguri Store x flanela.id. Built with 💕</p>
+    </footer>
+
+    <!-- Script Integrasi WhatsApp -->
+    <script>
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            
+            // Nomor WhatsApp tujuan
+            const phone = "62895331150145"; // Hendra
+
+            const nama = document.getElementById('nama').value;
+            const karakter = document.getElementById('karakter').value;
+            const jumlah = document.getElementById('jumlah').value;
+            const catatan = document.getElementById('catatan').value;
+
+            // Format Pesan
+            const message = `Halo *Ngarep Ngguri Store (flanela.id)*! 👋🏼%0A%0ASaya mau pesan Ganci Custom dong:%0A- *Nama:* ${nama}%0A- *Request Karakter:* ${karakter}%0A- *Jumlah:* ${jumlah} pcs%0A- *Catatan:* ${catatan || '-'}%0A%0AMohon diinfo total harga dan langkah selanjutnya ya! Terima kasih 🥰`;
+
+            // Buka link WhatsApp
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+</html>
